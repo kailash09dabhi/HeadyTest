@@ -2,7 +2,15 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
   <item
+      android:id="@+id/action_sortingByOrderCount"
+      android:title="Sort by order count"
+      app:showAsAction="never" />
+  <item
+      android:id="@+id/action_sortingByViewCount"
+      android:title="Sort by view count"
+      app:showAsAction="never" />
+  <item
       android:id="@+id/action_sortingByShareCount"
       android:title="Sort by share count"
-      app:showAsAction="always" />
+      app:showAsAction="never" />
 </menu>

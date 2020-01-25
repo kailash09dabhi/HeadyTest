@@ -5,9 +5,13 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.kailashdabhi.headytest.ProductAdapter.ViewHolder
-import com.kailashdabhi.headytest.data.model.Product
+import com.kailashdabhi.headytest.data.database.Product
+import kotlinx.android.synthetic.main.item_product.view.category
 import kotlinx.android.synthetic.main.item_product.view.dateAdded
 import kotlinx.android.synthetic.main.item_product.view.name
+import kotlinx.android.synthetic.main.item_product.view.orderCount
+import kotlinx.android.synthetic.main.item_product.view.shareCount
+import kotlinx.android.synthetic.main.item_product.view.viewCount
 
 class ProductAdapter(private val items: List<Product>) :
   RecyclerView.Adapter<ViewHolder>() {
@@ -35,10 +39,18 @@ class ProductAdapter(private val items: List<Product>) :
       holder.name.text = product.name
     }
     holder.dateAdded.text = product.dateAdded
+    holder.category.text = "Category - " + product.category
+    holder.shareCount.text = "Share count - " + product.shareCount
+    holder.viewCount.text = "View count - " + product.viewCount
+    holder.orderCount.text = "Order count - " + product.orderCount
   }
 
   class ViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-    val dateAdded = view.dateAdded
     val name = view.name
+    val category = view.category
+    val viewCount = view.viewCount
+    val orderCount = view.orderCount
+    val shareCount = view.shareCount
+    val dateAdded = view.dateAdded
   }
 }
