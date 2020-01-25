@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.item_product.view.orderCount
 import kotlinx.android.synthetic.main.item_product.view.shareCount
 import kotlinx.android.synthetic.main.item_product.view.viewCount
 
-class ProductAdapter(private val items: List<Product>) :
+class ProductAdapter(val items: List<Product>) :
   RecyclerView.Adapter<ViewHolder>() {
 
   override fun getItemCount(): Int {

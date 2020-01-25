@@ -15,15 +15,15 @@ class Converters {
   @TypeConverter
   fun stringToListOfVariants(json: String?): List<Variants>? {
     return if (json != null) {
-      Gson().fromJson<List<Variants>>(
+      Gson().fromJson(
         json,
-        object : TypeToken<List<String?>?>() {}.type
+        object : TypeToken<List<Variants?>?>() {}.type
       )
     } else null
   }
 
   @TypeConverter
-  fun listOfVariantsToString(`object`: List<Tax?>?): String {
+  fun listOfVariantsToString(`object`: List<Variants>): String {
     return if (`object` != null) {
       Gson().toJson(`object`)
     } else ""

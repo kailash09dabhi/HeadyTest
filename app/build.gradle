@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
   compileSdkVersion 29
@@ -24,6 +25,9 @@ android {
   compileOptions {
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
+  }
+  kotlinOptions {
+    jvmTarget = JavaVersion.VERSION_1_8.toString()
   }
 }
 
@@ -53,5 +57,7 @@ dependencies {
   implementation "androidx.cardview:cardview:1.0.0"
 
   implementation "androidx.room:room-runtime:2.2.3"
-  annotationProcessor "androidx.room:room-compiler:2.2.3"
+  kapt "androidx.room:room-compiler:2.2.3"
+  implementation 'androidx.room:room-ktx:2.2.3'
+  kapt "androidx.room:room-compiler:2.2.3"
 }
